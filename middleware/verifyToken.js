@@ -1,4 +1,4 @@
-import admin from "./firebaseAdmin.js"
+import admin from "../Config/firebaseAdmin.js"
 
 export const verifyToken = async (req, res, next) => {
   const authHeader = req.headers.authorization

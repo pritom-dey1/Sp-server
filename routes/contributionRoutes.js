@@ -1,6 +1,5 @@
 import express from "express"
 import { addContribution, getContributionsByIssue, getContributionsByUser } from "../controllers/contributionController.js"
-import { verifyToken } from "../middleware/verifyToken.js"
 const router = express.Router()
 
 router.get("/", async (req, res) => {
@@ -13,8 +12,8 @@ router.get("/", async (req, res) => {
   }
 })
 
-router.post("/",verifyToken, addContribution)
-router.get("/issue/:issueId",verifyToken, getContributionsByIssue)
-router.get("/user/:email",verifyToken, getContributionsByUser)
+router.post("/",addContribution)
+router.get("/issue/:issueId",getContributionsByIssue)
+router.get("/user/:email",getContributionsByUser)
 
 export default router
