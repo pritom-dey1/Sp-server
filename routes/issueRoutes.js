@@ -7,6 +7,6 @@ router.get("/", getAllIssues)
 router.get("/:id",verifyToken, getSingleIssue)
 router.post("/",verifyToken, createIssue)
 router.patch("/:id",verifyToken, updateIssue)
-router.delete("/:id", deleteIssue)
+router.delete("/:id",verifyToken, deleteIssue)
 
 export default router
